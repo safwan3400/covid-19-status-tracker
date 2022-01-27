@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+
+
+
+import { Routes, Route, Link } from "react-router-dom";
+import Header from './Components/Header';
+import India from './Components/India';
+import World from './Components/World';
+
+
+class App extends React.Component {
+  
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <Header />
+        <Routes>
+          <Route path="/" element={<India />} />
+          <Route path="/india" element={<India />} />
+          <Route path="/world" element={<World />} />
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
