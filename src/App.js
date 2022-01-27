@@ -18,9 +18,9 @@ class App extends React.Component {
       <div className="container-fluid">
         <Header />
         <Routes>
-          <Route path="/" element={<India />} />
           <Route path="/india" element={<India />} />
           <Route path="/world" element={<World />} />
+          <Route path="*" element={<India />} />
         </Routes>
       </div>
     );
